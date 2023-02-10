@@ -9,3 +9,10 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Pokemon {
+  id Int @id @default(autoincrement())
+  name String @unique
+  image String
+  createdAt DateTime @default(now())
+}
